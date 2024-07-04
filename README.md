@@ -63,3 +63,18 @@ There is also a global (inside the `QUSB` namespace, that is) function `setDebug
 
 
 [1]: The IO classes are not really subclasses of `QIODevice`, just *work similarly*. This may change in the future; helps are welcomed.
+
+
+
+添加环境变量： 通过设置 LD_LIBRARY_PATH 环境变量来临时添加库文件的路径。这可以在当前终端会话中完成，也可以通过修改 ~/.bashrc 或 /etc/profile 文件来永久添加。
+
+例如：
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/your/library
+然后运行 source ~/.bashrc 或 source /etc/profile 使更改生效1。
+
+复制库文件到标准库路径： 将您的动态库文件复制到 /usr/lib 或 /usr/local/lib 这样的标准库路径下，这样系统就能在运行时找到它们。例如：
+sudo cp libqusb.so.1 /usr/lib/
+然后运行 sudo ldconfig 以更新系统的库缓存1。
+使用 ldconfig 添加库路径： 您可以编辑 /etc/ld.so.conf 文件或 /etc/ld.so.conf.d/*.conf 文件，在其中添加您的库文件路径。之后运行 sudo ldconfig 来更新库缓存，这样程序就能在运行时找到库文件了1。
+
+
