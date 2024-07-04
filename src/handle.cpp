@@ -192,7 +192,7 @@ QString Handle::stringDescriptor(quint32 index) const
                 bufferSize);
     if (r < 0)  // TODO: Need to do something with the error code.
         qWarning("Error getting description");
-    return QString::fromAscii(buffer, bufferSize);
+    return QString::fromUtf8(buffer, bufferSize);
 }
 
 }   // namespace QUSB
