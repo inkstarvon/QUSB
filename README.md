@@ -66,7 +66,9 @@ There is also a global (inside the `QUSB` namespace, that is) function `setDebug
 
 
 
-添加环境变量： 通过设置 LD_LIBRARY_PATH 环境变量来临时添加库文件的路径。这可以在当前终端会话中完成，也可以通过修改 ~/.bashrc 或 /etc/profile 文件来永久添加。
+## 添加环境变量： 
+
+通过设置 LD_LIBRARY_PATH 环境变量来临时添加库文件的路径。这可以在当前终端会话中完成，也可以通过修改 ~/.bashrc 或 /etc/profile 文件来永久添加。
 
 例如：
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/your/library
